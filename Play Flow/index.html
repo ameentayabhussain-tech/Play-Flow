@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Flow APK Download (Free) - All In One Video & Audio Player</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --surface-card: #16181c;
+            --accent-color: #45f3ff;
+            --success-color: #2ecc71;
+            --text-primary: #ffffff;
+            --text-secondary: #c5c6c7;
+            --border-color: #22272d;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        img { max-width: 100%; height: auto; display: block; }
+        body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: var(--bg-color); color: var(--text-primary); line-height: 1.45; }
+        
+        /* Hide scrollbar while keeping scroll functionality */
+        ::-webkit-scrollbar { width: 0; }
+        html { scrollbar-width: none; }
+        body { -ms-overflow-style: none; }
+
+        header { background: var(--surface-card); border-bottom: 1px solid var(--border-color); padding: 1rem 4%; }
+        .header-inner { width: 100%; max-width: 1100px; margin: 0 auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    
+        .nav-actions { display:flex; gap:.6rem; align-items:center }
+        .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.6rem .9rem; border-radius:8px; text-decoration:none; font-weight:600 }
+        .btn-download { background: var(--success-color); color:#04210b }
+        .btn-muted { background: transparent; color:var(--text-secondary); border:1px solid transparent }
+
+        .main-layout { max-width:1200px; margin:2rem auto; padding:0 1.5rem; display:grid; grid-template-columns:2fr 1fr; gap:1.5rem; min-width:0 }
+
+        .apk-card { background:var(--surface-card); border:1px solid var(--border-color); border-radius:12px; padding:1.5rem; }
+        .app-meta { display:flex; gap:1rem; align-items:center; flex-wrap:wrap }
+        header .header-inner img { width:56px; height:56px; border-radius:50%; object-fit:cover; }
+        .app-icon { width:88px; height:88px; border-radius:18px; background:linear-gradient(135deg,#1f4068,#162447); display:flex; align-items:center; justify-content:center; font-size:2.2rem; color:var(--accent-color); overflow:hidden; }
+        .app-icon img { width:100%; height:100%; object-fit:cover; display:block; }
+        .app-title h1 { font-size:1.45rem; margin-bottom:.25rem }
+        .app-dev { color:var(--accent-color); font-weight:600; font-size:.95rem }
+        .badge-list { display:flex; gap:.5rem; margin-top:.6rem; flex-wrap:wrap }
+        .badge { background:rgba(69,243,255,0.08); color:var(--accent-color); padding:.2rem .5rem; border-radius:6px; font-size:.75rem; font-weight:700 }
+
+        .specs { display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap }
+        table.spec-table { width:100%; border-collapse:collapse; margin-top:.6rem }
+        .spec-table td { padding:.5rem 0; color:var(--text-secondary) }
+        .spec-label { width:40%; color:var(--text-secondary) }
+        .spec-val { text-align:right; font-weight:700 }
+
+        .action-button-group { margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap }
+        .apk-download-trigger { background:var(--success-color); color:#04210b; padding:.9rem 1rem; border-radius:10px; font-weight:800; text-decoration:none }
+
+        .content-section { background:var(--surface-card); border:1px solid var(--border-color); border-radius:12px; padding:1rem; margin-top:1rem }
+        .content-section h2 { font-size:1.1rem; margin-bottom:.6rem; border-left:4px solid var(--accent-color); padding-left:.6rem }
+        .content-section p { color:var(--text-secondary); font-size:.95rem }
+
+        .screenshot-window { margin-top:.8rem }
+        .screenshot-track { display:flex; gap:1rem; overflow-x:auto; padding-bottom:.6rem; scroll-snap-type:x mandatory; scroll-behavior:smooth; }
+        .screenshot-track::-webkit-scrollbar { display:none; }
+        .screenshot-track { -ms-overflow-style:none; scrollbar-width:none; }
+        .screenshot-card { flex:0 0 min(70%, 230px); min-width:min(70%, 230px); aspect-ratio: 3 / 4; border-radius:10px; background:#0b0c10; border:1px solid var(--border-color); display:flex; align-items:center; justify-content:center; color:var(--accent-color); scroll-snap-align:start; }
+        .screenshot-card img { width:100%; height:100%; object-fit:cover; border-radius:8px; }
+
+        .sidebar-panel { display:flex; flex-direction:column; gap:1rem; width:100%;; width:100%; }
+        .widget-box { background:var(--surface-card); border:1px solid var(--border-color); border-radius:12px; padding:1rem; width:100%; }
+        .widget-box h3 { margin-bottom:.6rem }
+        .instruction-step { display:flex; gap:.6rem; color:var(--text-secondary); margin-bottom:.6rem; flex-wrap:wrap }
+        .step-num { background:var(--border-color); color:var(--accent-color); width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700 }
+
+        footer { max-width:1200px; margin:2rem auto; padding:1.5rem; color:var(--text-secondary); text-align:center }
+
+        @media (max-width:1100px) {
+            .main-layout { padding:0 1rem; gap:1.25rem; grid-template-columns:1fr; }
+            .main-layout > div, .main-layout > aside { min-width:0; }
+            .apk-card, .widget-box, footer { padding:1.25rem }
+        }
+
+        @media (max-width:900px) {
+            .app-meta { justify-content:center }
+            .header-inner { align-items:flex-start }
+            .sidebar-panel { width:100% }
+        }
+
+        @media (max-width:760px) {
+            header .header-inner { flex-direction:column; align-items:flex-start; gap:.75rem }
+            .nav-actions { width:100%; justify-content:space-between }
+            .app-meta { flex-direction:column; align-items:center; text-align:center }
+            .action-button-group { width:100%; flex-direction:column }
+            .apk-download-trigger, .btn { width:100%; justify-content:center }
+            .screenshot-card { flex:0 0 70%; min-width:70% }
+        }
+
+        @media (max-width:560px) {
+            header { padding:1rem 1rem }
+            .main-layout { padding:0 .75rem }
+            .content-section { padding:.9rem }
+            .app-title h1 { font-size:1.35rem }
+            .spec-label { width:45% }
+        }
+
+        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:1000; align-items:center; justify-content:center; }
+        .modal.active { display:flex; }
+        .modal-content { position:relative; width:90%; max-width:600px; height:80vh; }
+        .modal-image { width:100%; height:100%; object-fit:contain; }
+        .modal-close { position:absolute; top:-40px; right:0; background:none; border:none; color:var(--text-primary); font-size:2rem; cursor:pointer; }
+        .modal-close:hover { color:var(--accent-color); }
+        .modal-nav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.1); border:none; color:var(--text-primary); font-size:1.5rem; padding:1rem; cursor:pointer; z-index:10; border-radius:8px; }
+        .modal-nav:hover { background:rgba(69,243,255,0.2); }
+        .modal-nav.prev { left:-50px; }
+        .modal-nav.next { right:-50px; }
+        .modal-counter { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:var(--text-secondary); font-size:0.9rem; background:rgba(0,0,0,0.5); padding:0.5rem 1rem; border-radius:20px; }
+        
+        .feedback-section { background:var(--surface-card); border:1px solid var(--border-color); border-radius:12px; padding:2rem; margin-top:3rem; margin-bottom:3rem; }
+        .feedback-section h2 { font-size:1.4rem; color:var(--accent-color); margin-bottom:1.5rem; }
+        .feedback-list { display:grid; gap:1rem; margin-top:1.5rem; }
+        .feedback-card { background:rgba(255,255,255,0.04); border:1px solid var(--border-color); border-radius:12px; padding:1rem; }
+        .feedback-card-header { display:flex; align-items:center; justify-content:space-between; gap:.75rem; flex-wrap:wrap; margin-bottom:.75rem; }
+        .feedback-card-name { font-weight:700; }
+        .feedback-card-rating { color:var(--accent-color); font-weight:700; }
+        .feedback-card-message { color:var(--text-secondary); white-space:pre-wrap; }
+        .feedback-card-time { color:var(--text-secondary); font-size:.85rem; margin-top:.65rem; }
+        .form-group { margin-bottom:1.5rem; }
+        .form-group label { display:block; color:var(--text-primary); font-weight:600; margin-bottom:0.5rem; }
+        .form-group input, .form-group textarea { width:100%; padding:0.75rem; background:rgba(255,255,255,0.05); border:1px solid var(--border-color); border-radius:8px; color:var(--text-primary); font-family:'Inter', sans-serif; font-size:0.95rem; }
+        .form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--accent-color); background:rgba(69,243,255,0.05); }
+        .form-group textarea { resize:vertical; min-height:120px; }
+        .submit-btn { background:var(--accent-color); color:#0b0c10; padding:0.8rem 1.5rem; border:none; border-radius:8px; font-weight:700; cursor:pointer; font-size:1rem; }
+        .submit-btn:hover { background:#5fffff; }
+        .feedback-message { display:none; padding:1rem; border-radius:8px; margin-bottom:1.5rem; text-align:center; font-weight:600; }
+        .feedback-message.success { background:rgba(46,204,113,0.2); color:#2ecc71; display:block; }
+        .feedback-message.error { background:rgba(231,76,60,0.2); color:#e74c3c; display:block; }
+        
+        @media (max-width:768px) {
+            .modal-close { top:10px; right:10px; }
+            .modal-nav.prev { left:10px; }
+            .modal-nav.next { right:10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+        <img src="assets/screenshots/cropped_circle_image.png" alt="Play Flow ">
+            <div class="nav-actions">
+                <a class="btn btn-muted" href="Pricacy_Policy.html">Privacy</a>
+                <a class="btn btn-download" href="#download">Download</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-layout">
+        <!-- Left Column -->
+        <div>
+            <div class="apk-card">
+                <div class="app-meta">
+                    <div class="app-icon"><img src="assets/screenshots/cropped_circle_image.png" alt="Play Flow"></div>
+                    <div class="app-title">
+                        <h1>Play Flow</h1>
+                        <div class="app-dev">All In One Video & Audio Player</div>
+                        <div class="badge-list">
+                            <span class="badge">Free</span>
+                            <span class="badge">No Ads</span>
+                            <span class="badge">v 1.0.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="specs">
+                    <table class="spec-table">
+                        <tr><td class="spec-label">File Size</td><td class="spec-val">12.8 MB</td></tr>
+                        <tr><td class="spec-label">Version</td><td class="spec-val">2.3.1</td></tr>
+                        <tr><td class="spec-label">Updated</td><td class="spec-val">2026-06-15</td></tr>
+                        <tr><td class="spec-label">Requires</td><td class="spec-val">Android 6.0+</td></tr>
+                    </table>
+                </div>
+
+                <div class="action-button-group">
+                    <a id="download" class="apk-download-trigger" href="app/PlayFlow.apk" download> <i class="fa-solid fa-download"></i> Download APK</a>
+                    <a class="btn btn-muted" href="#how-to-install">How to install</a>
+                </div>
+
+                <div class="content-section">
+                    <h2>About Play Flow</h2>
+                    <p>Play Flow is a lightweight, powerful media player that supports virtually every audio and video format. Enjoy smooth playback, subtitle support, playlist management, and background audio with minimal battery impact.</p>
+
+                    <h2 style="margin-top:.8rem">Key Features</h2>
+                    <ul style="color:var(--text-secondary); margin-left:1rem; margin-top:.4rem">
+                        <li>Hardware accelerated playback and adaptive streaming</li>
+                        <li>Subtitle downloader & sync controls</li>
+                        <li>Equalizer & audio effects</li>
+                        <li>Picture-in-picture and background play</li>
+                    </ul>
+
+                    <div class="screenshot-window">
+                        <div class="screenshot-track" id="screenshotTrack">
+                            <div class="screenshot-card"> <img src="assets/screenshots/1 (1).png" alt="screenshot 1" style="max-width:100%; border-radius:8px"> </div>
+                            <div class="screenshot-card"> <img src="assets/screenshots/1 (2).png" alt="screenshot 2" style="max-width:100%; border-radius:8px"> </div>
+                            <div class="screenshot-card"> <img src="assets/screenshots/1 (3).png" alt="screenshot 3" style="max-width:100%; border-radius:8px"> </div>
+                            <div class="screenshot-card"> <img src="assets/screenshots/1 (4).png" alt="screenshot 4" style="max-width:100%; border-radius:8px"> </div>
+                            <div class="screenshot-card"> <img src="assets/screenshots/1 (5).png" alt="screenshot 5" style="max-width:100%; border-radius:8px"> </div>
+                            <div class="screenshot-card"> <img src="assets/screenshots/1 (1).jpg" alt="screenshot 6" style="max-width:100%; border-radius:8px"> </div>
+                            <div class="screenshot-card"> <img src="assets/screenshots/1 (2).jpg" alt="screenshot 7" style="max-width:100%; border-radius:8px"> </div>
+                            <div class="screenshot-card"> <img src="assets/screenshots/1 (3).jpg" alt="screenshot 8" style="max-width:100%; border-radius:8px"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="how-to-install" class="content-section">
+                <h2>How to Install</h2>
+                <div style="display:grid; gap:.6rem; margin-top:.6rem">
+                    <div class="instruction-step"><div class="step-num">1</div><div>Download the APK from the button above.</div></div>
+                    <div class="instruction-step"><div class="step-num">2</div><div>Allow installs from unknown sources in your Android settings.</div></div>
+                    <div class="instruction-step"><div class="step-num">3</div><div>Open the APK file and follow the prompts to install.</div></div>
+                    <div class="instruction-step"><div class="step-num">4</div><div>Open Play Flow and enjoy your media.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-panel">
+            <div class="widget-box">
+                <h3>Details</h3>
+                <p style="color:var(--text-secondary)">Developer: PlayFlow Inc.<br>License: Freeware<br>Official site: —</p>
+            </div>
+
+            <div class="widget-box">
+                <h3>Quick Notes</h3>
+                <p style="color:var(--text-secondary); font-size:.95rem">This package is signed and scanned for common threats. If you have an older device, prefer the <em>legacy</em> builds available on request.</p>
+            </div>
+
+            <div class="widget-box">
+                <h3>Support</h3>
+                <p style="color:var(--text-secondary)">Questions? See the Privacy page or contact support@playflow.example</p>
+            </div>
+        </aside>
+    </main>
+
+    <div class="container" style="max-width:1200px; margin:0 auto; padding:0 1.5rem">
+        <div class="feedback-section">
+            <h2>📝 Share Your Feedback</h2>
+            <p style="color:var(--text-secondary); margin-bottom:1.5rem">We'd love to hear from you! Your feedback helps us improve Play Flow.</p>
+            
+            <div id="feedbackMessage" class="feedback-message"></div>
+            
+            <form id="feedbackForm" onsubmit="handleFeedbackSubmit(event)">
+                <div class="form-group">
+                    <label for="feedbackName">Your Name</label>
+                    <input type="text" id="feedbackName" name="name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedbackRating">Rate Your Experience</label>
+                    <select id="feedbackRating" name="rating" style="width:100%; padding:0.75rem; background:rgba(255,255,255,0.05); border:1px solid var(--border-color); border-radius:8px; color:var(--text-primary); font-family:'Inter', sans-serif; font-size:0.95rem;" required>
+                        <option value="">-- Select a rating --</option>
+                        <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                        <option value="4">⭐⭐⭐⭐ Very Good</option>
+                        <option value="3">⭐⭐⭐ Good</option>
+                        <option value="2">⭐⭐ Fair</option>
+                        <option value="1">⭐ Poor</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedbackText">Your Feedback</label>
+                    <textarea id="feedbackText" name="message" placeholder="Tell us what you think..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Feedback</button>
+            </form>
+
+            <div id="feedbackList" class="feedback-list"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div>By downloading, you agree to our <a href="Pricacy_Policy.html" style="color:var(--accent-color); text-decoration:underline">Privacy Policy</a>.</div>
+        <div style="margin-top:.5rem; color:var(--text-secondary)">© 2026 PlayFlow Inc.</div>
+    </footer>
+
+    <div class="modal" id="imageModal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div class="modal-content">
+            <img id="modalImage" class="modal-image" src="" alt="Full size screenshot">
+            <div class="modal-counter"><span id="modalCounter">1 / 8</span></div>
+            <button class="modal-nav prev" onclick="prevImage()">❮</button>
+            <button class="modal-nav next" onclick="nextImage()">❯</button>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:3000' : window.location.origin;
+        const screenshots = [
+            'assets/screenshots/1 (1).png',
+            'assets/screenshots/1 (2).png',
+            'assets/screenshots/1 (3).png',
+            'assets/screenshots/1 (4).png',
+            'assets/screenshots/1 (5).png',
+            'assets/screenshots/1 (1).jpg',
+            'assets/screenshots/1 (2).jpg',
+            'assets/screenshots/1 (3).jpg'
+        ];
+        let currentImageIndex = 0;
+        let modalStartX = 0;
+
+        // Screenshot track swipe functionality
+        const track = document.getElementById('screenshotTrack');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        track.addEventListener('mousedown', (e) => {
+            isDown = true;
+            track.style.cursor = 'grabbing';
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+        });
+
+        track.addEventListener('mouseleave', () => {
+            isDown = false;
+            track.style.cursor = 'grab';
+        });
+
+        track.addEventListener('mouseup', () => {
+            isDown = false;
+            track.style.cursor = 'grab';
+        });
+
+        track.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 1;
+            track.scrollLeft = scrollLeft - walk;
+        });
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            scrollLeft = track.scrollLeft;
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            const x = e.touches[0].clientX;
+            const walk = (startX - x) * 1.5;
+            track.scrollLeft = scrollLeft + walk;
+        });
+
+        // Add click handlers to screenshot cards
+        document.querySelectorAll('.screenshot-card img').forEach((img, index) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                openModal(index);
+            });
+        });
+
+        // Modal functions
+        function openModal(index) {
+            currentImageIndex = index;
+            updateModalImage();
+            document.getElementById('imageModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateModalImage() {
+            const modal = document.getElementById('imageModal');
+            const img = document.getElementById('modalImage');
+            const counter = document.getElementById('modalCounter');
+            
+            img.src = screenshots[currentImageIndex];
+            counter.textContent = (currentImageIndex + 1) + ' / ' + screenshots.length;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % screenshots.length;
+            updateModalImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + screenshots.length) % screenshots.length;
+            updateModalImage();
+        }
+
+        // Modal swipe and keyboard navigation
+        const modal = document.getElementById('imageModal');
+        
+        modal.addEventListener('touchstart', (e) => {
+            modalStartX = e.touches[0].clientX;
+        });
+
+        modal.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const diff = modalStartX - endX;
+            
+            if (diff > 50) nextImage();
+            else if (diff < -50) prevImage();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (modal.classList.contains('active')) {
+                if (e.key === 'ArrowRight') nextImage();
+                else if (e.key === 'ArrowLeft') prevImage();
+                else if (e.key === 'Escape') closeModal();
+            }
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Feedback form handler
+        function handleFeedbackSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('feedbackForm');
+            const messageDiv = document.getElementById('feedbackMessage');
+            const submitBtn = form.querySelector('.submit-btn');
+            
+            const feedbackData = {
+                name: document.getElementById('feedbackName').value,
+                rating: document.getElementById('feedbackRating').value,
+                message: document.getElementById('feedbackText').value
+            };
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            fetch(`${API_BASE}/api/feedback`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(feedbackData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    messageDiv.textContent = '✓ ' + data.message;
+                    messageDiv.classList.remove('error');
+                    messageDiv.classList.add('success');
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Feedback';
+                    loadFeedbackList();
+                    
+                    setTimeout(() => {
+                        messageDiv.classList.remove('success');
+                    }, 5000);
+                } else {
+                    throw new Error(data.error || 'Form submission failed');
+                }
+            })
+            .catch(error => {
+                const reason = error.message || 'Error sending feedback. Please try again.';
+                messageDiv.textContent = '✗ ' + reason;
+                messageDiv.classList.remove('success');
+                messageDiv.classList.add('error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Feedback';
+                console.error('Feedback submit error:', reason);
+            });
+        }
+
+        function escapeHtml(text) {
+            if (text == null) return '';
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        async function loadFeedbackList() {
+            const list = document.getElementById('feedbackList');
+            list.innerHTML = '<p style="color:var(--text-secondary);">Loading feedback...</p>';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/feedbacks`);
+                const data = await response.json();
+
+                if (!response.ok || !data.success) {
+                    throw new Error(data.error || 'Unable to load feedback');
+                }
+
+                if (!data.feedbacks.length) {
+                    list.innerHTML = '<p style="color:var(--text-secondary);">No feedback has been posted yet.</p>';
+                    return;
+                }
+
+                list.innerHTML = data.feedbacks.map(feedback => `
+                    <div class="feedback-card">
+                        <div class="feedback-card-header">
+                            <div class="feedback-card-name">${escapeHtml(feedback.name)}</div>
+                            <div class="feedback-card-rating">${'⭐'.repeat(feedback.rating)} ${escapeHtml(String(feedback.rating))}/5</div>
+                        </div>
+                        <div class="feedback-card-message">${escapeHtml(feedback.message)}</div>
+                        <div class="feedback-card-time">${new Date(feedback.createdAt).toLocaleString()}</div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Feedback load error:', error);
+                list.innerHTML = '<p style="color:var(--text-secondary);">Unable to load feedback list right now.</p>';
+            }
+        }
+
+        loadFeedbackList();
+    </script>
+
+</body>
+</html>
