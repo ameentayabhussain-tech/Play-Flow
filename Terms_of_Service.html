@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service - Play Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --surface: #16181c;
+      --surface-alt: rgba(69, 243, 255, 0.05);
+      --accent: #45f3ff;
+      --text: #ffffff;
+      --subtext: #c5c6c7;
+      --muted: rgba(255,255,255,0.7);
+      --border: rgba(255,255,255,0.08);
+      --shadow: rgba(0,0,0,0.25);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, rgba(69, 243, 255, 0.12), transparent 30%), var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dust {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .appbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 12, 16, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .appbar-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+    }
+
+    .title {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .content {
+      padding: 24px 0 80px;
+    }
+
+    .intro-card {
+      background: var(--surface-alt);
+      border: 1px solid rgba(69, 243, 255, 0.12);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 20px 40px var(--shadow);
+      margin-bottom: 32px;
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .icon-wrap {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(69,243,255,0.08);
+      border: 1px solid rgba(69,243,255,0.18);
+      font-size: 16px;
+    }
+
+    .intro-card p {
+      margin: 0;
+      color: var(--subtext);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .policy-list {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 0 24px 8px;
+      box-shadow: 0 20px 40px var(--shadow);
+    }
+
+    .section {
+      padding: 26px 0 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .section > p {
+      margin: 0;
+      color: var(--subtext);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .bullets {
+      margin-top: 12px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 8px;
+      flex: 0 0 auto;
+    }
+
+    .footer {
+      text-align: center;
+      color: rgba(255,255,255,0.28);
+      padding: 32px 0 18px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .footer small {
+      display: block;
+      margin-top: 8px;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.18);
+    }
+
+    @media (max-width: 640px) {
+      .appbar-inner { min-height: 64px; }
+      .title { letter-spacing: 0.12em; font-size: 0.82rem; }
+      .intro-card, .policy-list { padding-left: 18px; padding-right: 18px; }
+      .section h2 { letter-spacing: 0.08em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="dust"></div>
+
+    <header class="appbar">
+      <div class="appbar-inner">
+        <a href="index.html" class="back-btn" aria-label="Back to app home">
+          <span>←</span>
+          <span>Back</span>
+        </a>
+        <div class="title">Terms of Service</div>
+      </div>
+    </header>
+
+    <main class="container content">
+      <section class="intro-card">
+        <div class="trust-row">
+          <span class="icon-wrap">⚖</span>
+          <span>Service Terms 3.0</span>
+        </div>
+        <p>Last Updated: November 15, 2026. Please read these terms carefully before using Play Flow features, tools, and background services.</p>
+      </section>
+
+      <section class="policy-list">
+        <div class="section">
+          <h2>1. Acceptance of Terms</h2>
+          <p>By downloading, installing, or using Play Flow, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the application.</p>
+          <ul class="bullets">
+            <li><span class="dot"></span><span>Agreement Scope: These terms govern your access to and use of Play Flow and all associated tools, services, and features.</span></li>
+            <li><span class="dot"></span><span>Age Requirement: You must be at least 13 years of age (or the legal age of digital consent in your jurisdiction) to use Play Flow.</span></li>
+            <li><span class="dot"></span><span>Updates: Continued use of Play Flow following any updates to these Terms signifies your acceptance of the revised terms.</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>2. License & Permitted Use</h2>
+          <p>Play Flow grants you a limited, non-exclusive, non-transferable, revocable license to use the app for personal, non-commercial purposes.</p>
+          <ul class="bullets">
+            <li><span class="dot"></span><span>Personal License: You may install and use Play Flow on devices owned or controlled by you.</span></li>
+            <li><span class="dot"></span><span>Restrictions: You shall not reverse engineer, decompile, modify, distribute, or create derivative works based on Play Flow.</span></li>
+            <li><span class="dot"></span><span>Ownership: All rights, title, and interest in Play Flow, including branding, assets, and source code, remain the exclusive property of Play Flow Media Group.</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>3. Tool Usage & Operational Guidelines</h2>
+          <p>Play Flow includes various local utilities and media management tools designed to enhance your playback experience.</p>
+          <ul class="bullets">
+            <li><span class="dot"></span><span>Media Manager & File Operations: Tools such as Duplicate Finder, Storage Doctor, and File Converter perform file modifications directly on your device storage. You are responsible for ensuring adequate backups before performing batch deletion or conversion.</span></li>
+            <li><span class="dot"></span><span>Private Vault: The Private Folder uses local AES-256 encryption. Play Flow does not store recovery keys or biometric passwords on external servers. Forgotten passcodes cannot be restored by our support team.</span></li>
+            <li><span class="dot"></span><span>Equalizer & Audio Booster: High gain or frequency adjustments in Audio Booster and Pro Booster are used at your own risk. Play Flow is not responsible for hardware audio distortion or speaker damage caused by extreme amplification.</span></li>
+            <li><span class="dot"></span><span>Cloud Hub: Cloud syncing with Google Drive and Microsoft OneDrive is governed by their respective API Terms of Service. You maintain full ownership of files uploaded to your cloud storage.</span></li>
+            <li><span class="dot"></span><span>Ethical Filtering (Halal Guard): Halal Guard operates locally using algorithmic keyword detection. It is provided on an "as-is" basis to assist ethical content preferences.</span></li>
+            <li><span class="dot"></span><span>Background & Battery Settings: Unrestricted battery usage and foreground service permissions are requested solely to ensure uninterrupted playback when your device screen is off.</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>4. Premium Subscriptions & Billing</h2>
+          <p>Play Flow offers optional Premium tier upgrades through Google Play Store or Amazon In-App Purchasing.</p>
+          <ul class="bullets">
+            <li><span class="dot"></span><span>Billing: Subscription fees are charged through your store account at confirmation of purchase.</span></li>
+            <li><span class="dot"></span><span>Auto-Renewal: Subscriptions automatically renew unless cancelled at least 24 hours before the current period ends.</span></li>
+            <li><span class="dot"></span><span>Management: You can manage or cancel your subscription anytime via your Google Play Store or Amazon Appstore account settings.</span></li>
+            <li><span class="dot"></span><span>Refunds: All refund requests are governed by the refund policies of the respective app platform through which the purchase was made.</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>5. User Conduct & Content Restrictions</h2>
+          <p>You agree to use Play Flow lawfully and in accordance with acceptable content standards.</p>
+          <ul class="bullets">
+            <li><span class="dot"></span><span>Lawful Use: You agree not to use Play Flow to play, convert, transmit, or store content that infringes upon third-party copyrights or violates applicable laws.</span></li>
+            <li><span class="dot"></span><span>Network Integrity: You agree not to misuse network tools, including TV Casting and Subtitle Downloader, for unauthorized traffic distribution or unauthorized media access.</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>6. Disclaimers & Limitation of Liability</h2>
+          <p>Play Flow is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, express or implied.</p>
+          <ul class="bullets">
+            <li><span class="dot"></span><span>No Warranty: We do not guarantee uninterrupted, error-free operation or complete immunity from data loss during local storage operations.</span></li>
+            <li><span class="dot"></span><span>Limitation of Liability: To the maximum extent permitted by law, Play Flow Media Group shall not be liable for any indirect, incidental, or consequential damages resulting from app usage.</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>7. Governing Law & Contact</h2>
+          <p>These Terms shall be governed by and construed in accordance with applicable governing laws.</p>
+          <ul class="bullets">
+            <li><span class="dot"></span><span>Jurisdiction: Any disputes arising hereunder shall be subject to the exclusive jurisdiction of the competent courts.</span></li>
+            <li><span class="dot"></span><span>Contact Us: For questions or legal notices regarding these Terms, please contact support@playflow.app.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="footer">
+        © 2026 Play Flow Media Group
+        <small>Licensed for personal use on Android devices.</small>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
