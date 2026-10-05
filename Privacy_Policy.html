@@ -236,90 +236,99 @@
       <section class="intro-card">
         <div class="trust-row">
           <span class="icon-wrap">✓</span>
-          <span>Trust Protocol 3.0</span>
+          <span>Your Privacy is Protected</span>
         </div>
-        <p>Last Updated: November 15, 2026. This Privacy Policy details our data processing practices, permission usage for all tools, and your rights as a user.</p>
+        <p>Last Updated: 2026. This Privacy Policy explains how Play Flow handles your data, system permissions, video downloader, Kids Cinema, and cloud features in a transparent and secure manner.</p>
       </section>
 
       <section class="policy-list">
         <div class="section">
-          <h2>1. Privacy-First Local Architecture</h2>
-          <p>Play Flow operates primarily on a local, device-centric architecture. Data operations are performed locally in your device's sandboxed environment whenever possible.</p>
+          <h2>1. Privacy-First Architecture & Authentication</h2>
+          <p>Play Flow is built with a local-first philosophy. Your local audio, video, and personal media files remain strictly stored on your device in private sandboxed storage.</p>
           <ul class="bullets">
-            <li><span class="dot"></span><span>Local Media Metadata: Song titles, video paths, artwork, play counts, and playback position are indexed and stored locally in Isar/SQLite databases on your device.</span></li>
-            <li><span class="dot"></span><span>Identity Information: When you choose to log in with Google, we receive basic identity details (email and display name) solely to identify your account for Cloud Hub sync.</span></li>
-            <li><span class="dot"></span><span>Zero Third-Party Media Uploads: Your local audio and video files are never automatically uploaded to any third-party server or external database.</span></li>
+            <li><span class="dot"></span><span><strong>Local Processing:</strong> Song metadata, video history, playlists, equalizer profiles, and custom preferences are indexed locally on your device using Isar/SQLite.</span></li>
+            <li><span class="dot"></span><span><strong>Zero Automatic Uploads:</strong> Play Flow never automatically uploads your personal videos, songs, or private vault files to external servers or third parties.</span></li>
+            <li><span class="dot"></span><span><strong>Anonymous & Google Sign-In:</strong> Guest sessions automatically assign an anonymous Firebase ID to preserve your referral rewards and app preferences. Upgrading to Google Sign-In links your account seamlessly without transmitting personal files.</span></li>
+            <li><span class="dot"></span><span><strong>Student Pass & Referral Protection:</strong> Verification emails and single-use invite codes are securely processed via Firebase Firestore and protected against unauthorized data scraping.</span></li>
           </ul>
         </div>
 
         <div class="section">
-          <h2>2. Comprehensive Tools & Permissions Explanation</h2>
-          <p>To provide advanced media playback, file management, and background playback features, Play Flow requests specific system permissions.</p>
+          <h2>2. PlayFlow Kids Cinema & Children's Privacy (COPPA / GDPR Kids)</h2>
+          <p>Play Flow includes a specialized, child-safe media viewing surface called PlayFlow Kids Cinema:</p>
           <ul class="bullets">
-            <li><span class="dot"></span><span>All Files Access (MANAGE_EXTERNAL_STORAGE) & Storage Permissions: Essential for core tools like Duplicate Finder, Media Manager, Storage Doctor, File Converter, and Recycle Bin to locate, organize, clean, and restore media across storage directories.</span></li>
-            <li><span class="dot"></span><span>Battery Optimization Exemption (REQUEST_IGNORE_BATTERY_OPTIMIZATIONS): Requested to allow the background AudioService to run uninterrupted without being prematurely terminated by Android's power saver routines.</span></li>
-            <li><span class="dot"></span><span>Notification Permission (POST_NOTIFICATIONS): Used to display ongoing playback notification controls in the Android shade and LockScreen widget.</span></li>
-            <li><span class="dot"></span><span>Foreground Services (FOREGROUND_SERVICE_MEDIA_PLAYBACK): Maintains real-time media session controls and active audio pipeline when screen is off.</span></li>
-            <li><span class="dot"></span><span>Camera & Microphone Permissions: Utilized exclusively within the Video Editor & GIF Creator tools when importing live camera footage or recording voiceovers.</span></li>
-            <li><span class="dot"></span><span>Biometric Permission (USE_BIOMETRIC): Used solely to authenticate access to your Private Folder / Vault. Biometric readings stay hardware-isolated and are never transmitted.</span></li>
-            <li><span class="dot"></span><span>Network & Wi-Fi Permissions: Required for TV Casting (DLNA/Chromecast), Subtitle Downloader, Network Discovery/Speed Test, and Cloud Hub synchronization.</span></li>
+            <li><span class="dot"></span><span><strong>100% Local Content Filtering:</strong> Video titles selected in Kids Cinema are analyzed on-device using local cartoon keyword matching to ensure safe, wholesome cartoon playback (e.g. Motu Patlu, Peppa Pig, Doraemon, Tom & Jerry, Cocomelon).</span></li>
+            <li><span class="dot"></span><span><strong>No Children Data Collection:</strong> Play Flow does not request, store, harvest, or transmit any personally identifiable information (PII) or biometric data from children or minor users.</span></li>
+            <li><span class="dot"></span><span><strong>Parental Controls & Daily Screen Limits:</strong> Parents can configure age thresholds (under 15 years) and daily screen time limits (2h/3h) stored locally in SharedPreferences.</span></li>
+            <li><span class="dot"></span><span><strong>COPPA & GDPR Compliance:</strong> PlayFlow Kids Cinema complies with COPPA and GDPR Kids guidelines by operating completely offline without ad tracking targeted at children.</span></li>
           </ul>
         </div>
 
         <div class="section">
-          <h2>3. Cloud Hub & Backup Integrations</h2>
-          <p>Play Flow integrates with third-party cloud providers (Google Drive API and Microsoft Graph API for OneDrive) for optional off-site backup.</p>
+          <h2>3. Video Downloader & Media Tool Privacy</h2>
+          <p>The built-in Video Downloader and media management tools operate with strict local transparency:</p>
           <ul class="bullets">
-            <li><span class="dot"></span><span>User-Initiated Backup: Uploads and downloads occur strictly under your explicit direction within Cloud Hub.</span></li>
-            <li><span class="dot"></span><span>Encryption before Sync: Media files stored inside the Private Folder are encrypted with AES-256 before any cloud backup transaction.</span></li>
-            <li><span class="dot"></span><span>Revocable Tokens: Cloud authentication tokens are stored securely using EncryptedSharedPreferences/KeyStore and can be revoked at any time.</span></li>
+            <li><span class="dot"></span><span><strong>Local Direct Downloads:</strong> Video downloads are saved directly to your device storage in "DCIM/PlayFlow_Downloads" or public MediaStore.</span></li>
+            <li><span class="dot"></span><span><strong>No Downloader Tracking:</strong> Downloaded URLs, media filenames, and progress statistics remain strictly local and are never logged on remote servers.</span></li>
+            <li><span class="dot"></span><span><strong>Halal Guard Inspection:</strong> URLs and filenames are scanned on-device by Halal Guard to prevent accessing harmful or unethical content.</span></li>
           </ul>
         </div>
 
         <div class="section">
-          <h2>4. Ethical Filtering (Halal Guard)</h2>
-          <p>The Halal Guard tool offers automated content filtering to block specified keywords or media types based on ethical preferences.</p>
+          <h2>4. System Permissions Explained</h2>
+          <p>Play Flow requests standard Android system permissions solely to enable core features, media tools, and playback enhancers:</p>
           <ul class="bullets">
-            <li><span class="dot"></span><span>100% On-Device Analysis: Title inspection and rule evaluation occur completely on your device.</span></li>
-            <li><span class="dot"></span><span>Privacy Assurance: Filtered keywords, blocked video logs, and preference rules are stored in isolated local preference files and never uploaded anywhere.</span></li>
+            <li><span class="dot"></span><span><strong>All Files Access (MANAGE_EXTERNAL_STORAGE) & Media Permissions:</strong> Required for library scanning, Media Manager, Duplicate Finder, Format Converter, Video Compressor, Video Downloader, Storage Doctor, and Recycle Bin.</span></li>
+            <li><span class="dot"></span><span><strong>Background Audio & Battery Optimization Exemption:</strong> Allows uninterrupted background audio and video playback when the screen is turned off or when switching apps.</span></li>
+            <li><span class="dot"></span><span><strong>Notifications (POST_NOTIFICATIONS):</strong> Displays ongoing media playback controls and real-time conversion/download progress bars in the Android notification shade.</span></li>
+            <li><span class="dot"></span><span><strong>Biometric Authentication (USE_BIOMETRIC):</strong> Used exclusively to secure access to your local Private Vault. Biometric data stays hardware-isolated on your device.</span></li>
+            <li><span class="dot"></span><span><strong>Camera & Microphone (CAMERA / RECORD_AUDIO):</strong> Used strictly when capturing live video clips or recording voiceovers inside the Video Editor tool.</span></li>
+            <li><span class="dot"></span><span><strong>Network & Wi-Fi Permissions:</strong> Utilized for TV Casting (Chromecast/DLNA), Subtitle Downloader, Network Discovery, Video Downloader, and optional Cloud Hub sync.</span></li>
           </ul>
         </div>
 
         <div class="section">
-          <h2>5. Advertising, Analytics & Third-Party SDKs</h2>
-          <p>We integrate trusted SDKs to support our free tier and improve application reliability.</p>
+          <h2>5. Optional Cloud Hub Integrations</h2>
+          <p>Play Flow supports optional backup and streaming via Google Drive and OneDrive:</p>
           <ul class="bullets">
-            <li><span class="dot"></span><span>Google AdMob & AppLovin MAX: Serve contextual ads using anonymous Advertising Identifiers (GAID). You can reset your Advertising ID via Android System Settings.</span></li>
-            <li><span class="dot"></span><span>Firebase Crashlytics & Sentry: Collect anonymous crash reports, stack traces, and hardware parameters to help us resolve crashes.</span></li>
-            <li><span class="dot"></span><span>User Tracking Transparency: We respect App Tracking Transparency choices and honor Android opt-outs for personalized ads.</span></li>
+            <li><span class="dot"></span><span><strong>User-Controlled Sync:</strong> File uploads and downloads only occur when explicitly triggered by you in Cloud Hub.</span></li>
+            <li><span class="dot"></span><span><strong>Encrypted Storage:</strong> Media files stored in the Private Vault are encrypted with AES-256 before cloud backup.</span></li>
+            <li><span class="dot"></span><span><strong>Secure OAuth Tokens:</strong> Authentication tokens are stored securely in Android EncryptedSharedPreferences/KeyStore and can be revoked at any time.</span></li>
           </ul>
         </div>
 
         <div class="section">
-          <h2>6. Granular User Controls</h2>
-          <p>You maintain full authority over how Play Flow handles your data and settings.</p>
+          <h2>6. On-Device Content Filtering (Halal Guard)</h2>
+          <p>The Halal Guard tool provides automated ethical content filtering for a safer media viewing experience:</p>
           <ul class="bullets">
-            <li><span class="dot"></span><span>History Controls: Enable/disable playback history logging or wipe your entire history from the History screen.</span></li>
-            <li><span class="dot"></span><span>Cache Management: Instantly purge decrypted temporary files, thumbnail caches, and temporary subtitles in Settings or Storage Doctor.</span></li>
-            <li><span class="dot"></span><span>Cloud Disconnect: Unlink Google Drive or OneDrive in one click, immediately deleting local OAuth access tokens.</span></li>
-            <li><span class="dot"></span><span>Permission Toggles: You can revoke individual Android permissions (e.g., Battery Exemption, Notifications) anytime via Android App Info settings.</span></li>
+            <li><span class="dot"></span><span><strong>100% Local Evaluation:</strong> Keywords and media filter rules are processed entirely on-device.</span></li>
+            <li><span class="dot"></span><span><strong>Strict Confidentiality:</strong> Filter settings and blocked media logs are stored locally and never transmitted anywhere.</span></li>
           </ul>
         </div>
 
         <div class="section">
-          <h2>7. Global User Rights (GDPR & CCPA)</h2>
-          <p>We extend standard GDPR and CCPA privacy protections to all Play Flow users regardless of region.</p>
+          <h2>7. Advertising Networks & Analytics</h2>
+          <p>To support our free tier and ensure application stability across build flavors, we integrate trusted ad networks and diagnostics SDKs:</p>
           <ul class="bullets">
-            <li><span class="dot"></span><span>Right to Access & Portability: Request an export of your locally saved app preferences and database records.</span></li>
-            <li><span class="dot"></span><span>Right to Erasure (Account Deletion): Log out and clear app data to completely purge local and cloud-linked user profiles.</span></li>
-            <li><span class="dot"></span><span>Right to Opt-Out: Opt out of personalized advertising directly through device system settings.</span></li>
-            <li><span class="dot"></span><span>Contact Privacy Team: For privacy queries or data requests, email privacy@playflow.app.</span></li>
+            <li><span class="dot"></span><span><strong>Flavor-Specific Ad Networks:</strong> Google AdMob is utilized strictly in PlayStore builds. Unity Ads network is utilized exclusively in Global and alternative store builds (Amazon / Samsung).</span></li>
+            <li><span class="dot"></span><span><strong>Anonymous Identifiers:</strong> Ad networks utilize anonymous Advertising Identifiers (GAID) to serve non-sensitive ads. You can reset or limit ad personalization in your Android System Settings.</span></li>
+            <li><span class="dot"></span><span><strong>Firebase Crashlytics & Sentry:</strong> Collect anonymous crash logs and hardware specs to help us fix bugs and improve performance.</span></li>
           </ul>
         </div>
 
         <div class="section">
-          <h2>8. Children's Privacy</h2>
-          <p>Play Flow is designed for general audiences (13+). We do not knowingly collect personal data from children under 13.</p>
+          <h2>8. User Control & Data Rights</h2>
+          <p>You retain complete control over your data in Play Flow:</p>
+          <ul class="bullets">
+            <li><span class="dot"></span><span><strong>History & Cache Management:</strong> Clear playback history or purge temporary thumbnail caches anytime in Settings.</span></li>
+            <li><span class="dot"></span><span><strong>Cloud Disconnect:</strong> Unlink Google Drive or OneDrive with one tap to immediately delete local credentials.</span></li>
+            <li><span class="dot"></span><span><strong>GDPR & CCPA Rights:</strong> Request data exports or completely delete app data by logging out or clearing app storage in Android System Settings.</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>9. Contact Us</h2>
+          <p>If you have any questions, feedback, or privacy concerns regarding Play Flow, please reach out to our team at <a href="mailto:support@playflow.app" style="color: var(--accent);">support@playflow.app</a>.</p>
         </div>
       </section>
 
