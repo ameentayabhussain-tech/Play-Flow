@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Play Flow | Google Play Store Edition</title>
+  <meta name="description" content="Play Flow Terms of Service — Google Play Store Edition. Read the legal agreement governing your use of Play Flow on Android, including license, billing, vault security, and disclaimers." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.playflowapp.com/terms-of-service" />
+
+  <meta property="og:title" content="Terms of Service — Play Flow" />
+  <meta property="og:description" content="Legal agreement governing your use of Play Flow distributed via the Google Play Store." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --crimson:       #DC143C;
+      --crimson-light: #FF1E50;
+      --crimson-dark:  #A50E2D;
+      --crimson-glow:  rgba(220, 20, 60, 0.12);
+      --bg-primary:    #0A0C0F;
+      --bg-secondary:  #111418;
+      --bg-card:       #161B22;
+      --text-primary:  #F0F2F5;
+      --text-secondary:#A8B2C0;
+      --text-muted:    #64748B;
+      --border:        rgba(255,255,255,0.08);
+      --border-accent: rgba(220,20,60,0.25);
+      --radius-sm:     8px;
+      --radius-md:     14px;
+      --radius-lg:     22px;
+      --radius-xl:     32px;
+      --transition:    0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ---- COSMIC DUST BG ---- */
+    .cosmic-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .cosmic-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 45% at 80% 20%, rgba(220,20,60,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 15% 75%, rgba(220,20,60,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 35% 35% at 45% 10%, rgba(255,30,80,0.04) 0%, transparent 50%);
+    }
+    .cosmic-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle 1px at 20% 30%, rgba(255,255,255,0.3) 0%, transparent 1px),
+        radial-gradient(circle 1px at 78% 18%, rgba(255,255,255,0.2) 0%, transparent 1px),
+        radial-gradient(circle 1px at 35% 65%, rgba(255,255,255,0.15) 0%, transparent 1px),
+        radial-gradient(circle 1.5px at 88% 50%, rgba(220,20,60,0.4) 0%, transparent 1.5px),
+        radial-gradient(circle 1px at 10% 85%, rgba(255,255,255,0.2) 0%, transparent 1px),
+        radial-gradient(circle 1px at 65% 92%, rgba(255,255,255,0.15) 0%, transparent 1px),
+        radial-gradient(circle 1px at 95% 72%, rgba(255,255,255,0.25) 0%, transparent 1px),
+        radial-gradient(circle 1px at 3% 48%, rgba(220,20,60,0.3) 0%, transparent 1px);
+    }
+
+    /* ---- HEADER ---- */
+    #main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: #FFFFFF;
+      border-bottom: 2px solid #FCE7EB;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+      height: 56px;
+      display: flex;
+      align-items: center;
+    }
+    .header-inner { height: 56px !important; flex-wrap: nowrap !important; }
+    .header-inner * { white-space: nowrap !important; }
+    .back-btn { color: #1F2937 !important; border-color: #E2E8F0 !important; }
+    .back-btn:hover { color: #DC143C !important; border-color: #DC143C !important; background: #FFF1F2 !important; }
+    .header-logo span { color: #111827 !important; }
+    .header-logo span span { color: #DC143C !important; }
+    .header-page-title { color: #64748B !important; }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      height: 68px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .back-btn:hover { border-color: var(--border-accent); color: var(--crimson-light); background: rgba(220,20,60,0.06); }
+    .back-btn .arrow { font-size: 0.75rem; }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .header-logo-icon {
+      width: 30px; height: 30px;
+      background: linear-gradient(135deg, var(--crimson), var(--crimson-light));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px var(--crimson-glow);
+    }
+    .header-logo-icon svg { width: 14px; height: 14px; fill: white; }
+    .header-logo span { color: var(--crimson-light); }
+    .header-page-title {
+      margin-left: auto;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    /* ---- MAIN ---- */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 100px 24px 80px;
+    }
+
+    /* ---- HERO BANNER ---- */
+    .hero-banner {
+      background: rgba(220,20,60,0.05);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(220,20,60,0.12), transparent 70%);
+      border-radius: 50%;
+    }
+    .banner-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .banner-icon {
+      width: 56px; height: 56px;
+      flex-shrink: 0;
+      background: rgba(220,20,60,0.12);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .banner-info {}
+    .banner-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .banner-version {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--crimson-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+    .banner-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ---- WARNING BADGE ---- */
+    .agreement-notice {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(245,158,11,0.07);
+      border: 1px solid rgba(245,158,11,0.2);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 36px;
+      font-size: 0.84rem;
+      color: #FCD34D;
+      line-height: 1.5;
+    }
+    .agreement-notice .notice-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    /* ---- SECTION ---- */
+    .policy-section {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section:last-of-type { border-bottom: none; }
+    .section-heading {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-heading::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      background: linear-gradient(to bottom, var(--crimson), var(--crimson-light));
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .bullet-list { display: flex; flex-direction: column; gap: 10px; }
+    .bullet-item { display: flex; align-items: flex-start; gap: 12px; }
+    .bullet-dot {
+      flex-shrink: 0;
+      margin-top: 7px;
+      font-size: 0.9rem;
+      color: var(--crimson-light);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .bullet-text {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+    .bullet-text strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ---- FOOTER ---- */
+    .page-footer {
+      text-align: center;
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .page-footer .footer-brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+    .footer-links-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .footer-links-row a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+      border-bottom: 1px solid transparent;
+    }
+    .footer-links-row a:hover { color: var(--crimson-light); border-bottom-color: var(--crimson-light); }
+
+    /* ---- LAYOUT / TOC ---- */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .toc {
+      position: sticky;
+      top: 90px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .toc-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .toc-links { display: flex; flex-direction: column; gap: 6px; }
+    .toc-links a {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      line-height: 1.4;
+      display: block;
+    }
+    .toc-links a:hover { background: rgba(220,20,60,0.08); color: var(--crimson-light); }
+    .toc-links a.active { background: rgba(220,20,60,0.12); color: var(--crimson-light); }
+    .toc-also {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .toc-also-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .toc-also a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--crimson-light);
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      border: 1px solid var(--border-accent);
+    }
+    .toc-also a:hover { background: rgba(220,20,60,0.1); }
+
+    /* ---- SCROLL REVEAL ---- */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .header-page-title { display: none; }
+      main { padding: 88px 20px 60px; }
+      .hero-banner { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cosmic-bg" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-inner">
+    <a href="index.html" class="back-btn" id="back-to-home" aria-label="Back to Play Flow homepage">
+      <span class="arrow">‹</span> Back to Home
+    </a>
+    <a href="index.html" class="header-logo" id="header-logo-link">
+      <img src="assets/images/playflow-logo-dark.jpg" alt="PlayFlow Logo" style="width:32px; height:32px; border-radius:50%; object-fit:cover; margin-right:8px; border:1px solid rgba(0,210,255,0.4); box-shadow:0 0 10px rgba(0,210,255,0.3);" />
+      <span>Play<span style="color:#FF1E50;">Flow</span></span>
+    </a>
+    <div style="display:flex; align-items:center; gap:18px;">
+      <a href="index.html#screenshots" style="font-size:0.85rem; font-weight:600; color:var(--text-secondary); transition:0.2s;" onmouseover="this.style.color='#FF1E50'" onmouseout="this.style.color='var(--text-secondary)'">📸 Screenshots</a>
+      <a href="privacy-policy.html" style="font-size:0.85rem; font-weight:600; color:var(--text-secondary); transition:0.2s;" onmouseover="this.style.color='#FF1E50'" onmouseout="this.style.color='var(--text-secondary)'">Privacy Policy</a>
+      <span class="header-page-title">Play Store Terms</span>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- HERO BANNER -->
+  <div class="hero-banner reveal" id="terms-intro">
+    <div class="banner-row">
+      <div class="banner-icon" aria-hidden="true">⚖️</div>
+      <div class="banner-info">
+        <div class="banner-title">Legal Agreement</div>
+        <div class="banner-version">Version 1.0.0 &nbsp;•&nbsp; Play Store Edition (30 MB)</div>
+        <p class="banner-desc">
+          Updated: November 2026. These terms govern your use of PlayFlow v1.0.0 distributed via the Google Play Store.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTICE -->
+  <div class="agreement-notice reveal" id="agreement-notice" role="note" aria-label="Agreement notice">
+    <span class="notice-icon" aria-hidden="true">⚠️</span>
+    <span>By downloading Play Flow from the Google Play Store, you agree to these Terms. This agreement is between you and Play Flow Media Group.</span>
+  </div>
+
+  <div class="layout">
+    <!-- CONTENT -->
+    <div id="terms-content">
+
+      <!-- Section 1 -->
+      <div class="policy-section reveal" id="sec-1">
+        <h2 class="section-heading">1. ACCEPTANCE OF TERMS (PLAY STORE EDITION)</h2>
+        <p class="section-desc">By downloading Play Flow from the Google Play Store, you agree to these Terms. This agreement is between you and Play Flow Media Group.</p>
+        <ul class="bullet-list" aria-label="Acceptance of terms details">
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Google Play Policies:</strong> These terms supplement the Google Play Terms of Service.</span>
+          </li>
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Age Requirement:</strong> You must be at least 13 years old.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="policy-section reveal" id="sec-2">
+        <h2 class="section-heading">2. LICENSE &amp; PERMITTED USE</h2>
+        <p class="section-desc">We grant you a non-commercial, personal license to use Play Flow on your Android devices.</p>
+        <ul class="bullet-list" aria-label="License details">
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Restrictions:</strong> No reverse engineering or illegal distribution.</span>
+          </li>
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Intellectual Property:</strong> All branding and code are owned by Play Flow Media Group.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="policy-section reveal" id="sec-3">
+        <h2 class="section-heading">3. LOCAL FILE OPERATIONS</h2>
+        <p class="section-desc">Play Flow provides tools to manage local files (Duplicate Finder, Storage Doctor, etc.). You are responsible for your data.</p>
+        <ul class="bullet-list" aria-label="Local file operations details">
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>No Liability:</strong> We are not responsible for accidental deletion of local files.</span>
+          </li>
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Recycle Bin:</strong> Emptied items are permanently gone.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="policy-section reveal" id="sec-4">
+        <h2 class="section-heading">4. PRIVATE VAULT SECURITY</h2>
+        <p class="section-desc">Vault files are AES-256 encrypted locally. We do not store your passwords on any server.</p>
+        <ul class="bullet-list" aria-label="Vault security details">
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Password Recovery:</strong> We cannot recover forgotten Vault PINs. Keep your credentials safe.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="policy-section reveal" id="sec-5">
+        <h2 class="section-heading">5. CURATED FAMILY CONTENT &amp; MEDIA FEEDS</h2>
+        <p class="section-desc">PlayFlow provides access to pre-filtered educational and family-friendly media feeds.</p>
+        <ul class="bullet-list" aria-label="Curated content details">
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Family &amp; Child Safety:</strong> Curated media feeds are designed to be enjoyed under parental guidance and compliant with Google Play Families Policy.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="policy-section reveal" id="sec-6">
+        <h2 class="section-heading">6. BILLING &amp; SUBSCRIPTIONS</h2>
+        <p class="section-desc">Premium features are billed through your Google Play Account.</p>
+        <ul class="bullet-list" aria-label="Billing and subscription details">
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Refunds:</strong> Managed according to Google Play Store refund policies.</span>
+          </li>
+          <li class="bullet-item">
+            <span class="bullet-dot" aria-hidden="true">•</span>
+            <span class="bullet-text"><strong>Auto-Renewal:</strong> Subscriptions renew unless cancelled 24 hours prior to expiration.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 7 -->
+      <div class="policy-section reveal" id="sec-7">
+        <h2 class="section-heading">7. DISCLAIMERS</h2>
+        <p class="section-desc">Play Flow is provided "AS IS". We make no warranties about absolute service availability. The app and its features are subject to change without prior notice. We are not liable for any indirect, incidental, or consequential damages arising from your use of Play Flow.</p>
+      </div>
+
+      <!-- Section 8 -->
+      <div class="policy-section reveal" id="sec-8">
+        <h2 class="section-heading">8. CONTACT</h2>
+        <p class="section-desc">For legal notices, contact our team at <a href="mailto:playflowsupport@gmail.com" style="color:var(--crimson-light); border-bottom: 1px solid rgba(220,20,60,0.4);">playflowsupport@gmail.com</a>.</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="page-footer reveal">
+        <div class="footer-brand">© 2026 PlayFlow Technology &amp; Media Group</div>
+        <div class="footer-links-row">
+          <a href="index.html" id="footer-home-link">Home</a>
+          <a href="index.html#screenshots" id="footer-screens-link">App Screenshots</a>
+          <a href="privacy-policy.html" id="footer-privacy-link">Privacy Policy</a>
+          <a href="mailto:playflowsupport@gmail.com" id="footer-contact-link">Contact Us</a>
+        </div>
+      </div>
+
+    </div><!-- end terms-content -->
+
+    <!-- TABLE OF CONTENTS -->
+    <aside class="toc" aria-label="Table of contents">
+      <div class="toc-title">Contents</div>
+      <nav class="toc-links" aria-label="Terms sections">
+        <a href="#sec-1" id="toc-1">1. Acceptance of Terms</a>
+        <a href="#sec-2" id="toc-2">2. License &amp; Use</a>
+        <a href="#sec-3" id="toc-3">3. Local File Operations</a>
+        <a href="#sec-4" id="toc-4">4. Private Vault</a>
+        <a href="#sec-5" id="toc-5">5. Curated Family Content</a>
+        <a href="#sec-6" id="toc-6">6. Billing</a>
+        <a href="#sec-7" id="toc-7">7. Disclaimers</a>
+        <a href="#sec-8" id="toc-8">8. Contact</a>
+      </nav>
+      <div class="toc-also">
+        <div class="toc-also-label">See Also</div>
+        <a href="privacy-policy.html" id="toc-privacy-link">🔒 Privacy Policy</a>
+      </div>
+    </aside>
+
+  </div><!-- end layout -->
+</main>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => obs.observe(el));
+
+  // Active TOC
+  const sections = document.querySelectorAll('.policy-section[id]');
+  const tocObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const id = 'toc-' + e.target.id.split('-')[1];
+      const link = document.getElementById(id);
+      if (link) link.classList.toggle('active', e.isIntersecting);
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => tocObs.observe(s));
+</script>
+</body>
+</html>
